@@ -59,8 +59,7 @@
 /* Zawartosc strony */
 
 .container{
-    height: 500px;
-    background-color: aqua;
+    /* height: 500px; */
     display: flex;
     align-items: stretch;
     justify-content: space-between;
@@ -69,47 +68,113 @@
 
 .container div{
     margin: 20px;
+
 }
 
-.left{
-    height: 300px;
-    min-width: 250px;
-    background-color: blueviolet;
-}
+
 
 .middle{
-    height: 300px;
-    width: 700px;
-    background-color:darkgray;
+    min-height: 400px;
+    min-width: 900px;
+    background:url("https://pliki.doradcasmaku.pl/soczysty-kurczak-pieczony-w-calosci0-4.webp");
+    background-size: cover;
+}
+
+.middleWhite{
+    height: 70px;
+    width: 200px;
+    background: white;
+    position: relative;
+    top:-31px;
+    left: -30px;
+    border: 1px solid black;
+}
+
+.middle .text{
+    border: 1px solid black;
+    width: 450px;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    right: 35%;
+    font-weight: 900;
+    font-size: 18px;
+
+}
+.middleWhite img{
+    width: 100%;
+    height: 100%; 
 }
 
 .right{
-    height: 300px;
     width: 300px;
-    background-color:chocolate
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.right li{
+    margin-top: 10px;
 }
 
+ol#list li:last-child{
+    color:red;
+}
+
+
+
+
+/* .inspiracjeSrodek :hover{
+    transform: scale(1.1);
+} */
 
 .inspiracje{
     
     padding: 60px 45px;
-   
-    background-color: darkseagreen;
+    margin-left: 30px;
+    margin-right: 30px;
+    background: url(https://images.pexels.com/photos/1640769/pexels-photo-1640769.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     display: grid;
    
 }
 
 .inspiracjeSrodek{
-   /* max-width: 1200px; */
     margin: 0 auto;
     display: grid;
     grid-template-columns: 30% 30% 30%;
     grid-column-gap: 30px;
+    position: relative;
 }
 
 .card{
+    background: url(https://media.istockphoto.com/photos/bokeh-picture-id1248398407?k=20&m=1248398407&s=612x612&w=0&h=VRV4vktTyIkDmJMsqLFDwjSpvczM-DryL5rTMXBMZKE=);
     margin-top: 20px;
     max-width: 300px;
     border-radius: 20px;
-    border: 1px solid black;
+    border: 3px solid black;
+    /* transition: all .2s ease-in-out; */
 }
+
+.card img{
+    height: 100px;
+    width: 200px;
+}
+
+.card .tresc{
+    margin-bottom: 20px;
+    margin-right: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+   
+}
+
+.card .tresc p{
+    margin: 3px;
+}
+
+.card div{
+    margin-left: 10px;
+}
+
+
+
+
+

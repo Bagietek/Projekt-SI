@@ -27,20 +27,36 @@
     </div>
 
     <div class= "container">
+            <div class="middle">
+            <div class="middleWhite">
+                <h1>Przepis dnia</h1>
+            </div>
+            <div class="text">
+                <p>Pieczony marynowany kurczak z ziemiaczkami i warzywami</p>
+            </div>
+        </div>
+    
 
-        <div class="left">
-            <p>Najlepsze przepisy</p>
-                <ol>
-                    <li>Placki ziemniaczne</li>
-                    <li>Rosołek</li>
-                    <li>Marchewka Marynowana</li>
+        <div class="right">
+        <p>Najlepsze przepisy</p> 
+                <ol id ="list">
+                    <a href=""><li> <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
+                     width="70" height="70"> Placki ziemniaczne</li></a>
+                    
+                    <a href=""> <li> <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
+                     width="70" height="70"> Rosołek</li> </a>
+                    
+                     <a href=""><li><img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
+                     width="70" height="70"> Marchewka Marynowana</li> </a>
+
+                     <a href=""><li> <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
+                     width="70" height="70"> Placki ziemniaczne</li></a>
+
+                     <a href=""><li> <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
+                     width="70" height="70"> Placki ziemniaczne</li></a>
                 </ol>
 
         </div>
-
-        <div class="middle"></div>
-
-        <div class="right"></div>
 
     </div>
 
@@ -61,10 +77,10 @@
     <div class = "inspiracje">
         <h1>Inspiracje</h1>
     <div class="inspiracjeSrodek">
-        <div class="card">
+        <div class="card card-1">
             <div class = "obrazek">
                 <h1>Krewetki</h1>
-                <!-- <img src="https://www.mojegotowanie.pl/media/cache/default_view/uploads/media/recipe/0001/99/krewetki-na-ostro.jpeg" alt=""> -->
+                <img src="https://www.mojegotowanie.pl/media/cache/default_view/uploads/media/recipe/0001/99/krewetki-na-ostro.jpeg">
             </div>
                 <div class="tresc">
                     <p>Krewetki smażone na maśle z czosnkiem, 
@@ -76,7 +92,7 @@
         <div class="card">
             <div class = "obrazek">
                 <h1>Krewetki</h1>
-                <!-- <img src="https://www.mojegotowanie.pl/media/cache/default_view/uploads/media/recipe/0001/99/krewetki-na-ostro.jpeg" alt=""> -->
+                <img src="https://www.mojegotowanie.pl/media/cache/default_view/uploads/media/recipe/0001/99/krewetki-na-ostro.jpeg" alt="">
             </div>
                 <div class="tresc">
                     <p>Krewetki smażone na maśle z czosnkiem, 
@@ -88,7 +104,7 @@
         <div class="card">
             <div class = "obrazek">
                 <h1>Krewetki</h1>
-                <!-- <img src="https://www.mojegotowanie.pl/media/cache/default_view/uploads/media/recipe/0001/99/krewetki-na-ostro.jpeg" alt=""> -->
+                <img src="https://www.mojegotowanie.pl/media/cache/default_view/uploads/media/recipe/0001/99/krewetki-na-ostro.jpeg" alt="">
             </div>
                 <div class="tresc">
                     <p>Krewetki smażone na maśle z czosnkiem, 
@@ -100,10 +116,13 @@
         <div class="card">
             <div class = "obrazek">
                 <h1>Krewetki</h1>
-                <!-- <img src="https://www.mojegotowanie.pl/media/cache/default_view/uploads/media/recipe/0001/99/krewetki-na-ostro.jpeg" alt=""> -->
+                <img src="https://www.mojegotowanie.pl/media/cache/default_view/uploads/media/recipe/0001/99/krewetki-na-ostro.jpeg" alt="">
             </div>
                 <div class="tresc">
                     <p>Krewetki smażone na maśle z czosnkiem, 
+                        natką i papryczką chili. Podlewane białym winem, podawane z bagietką. 
+                        Najlepszy i najprostszy sposób na krewetki!
+                        Krewetki smażone na maśle z czosnkiem, 
                         natką i papryczką chili. Podlewane białym winem, podawane z bagietką. 
                         Najlepszy i najprostszy sposób na krewetki!</p>
                 </div>
@@ -112,7 +131,7 @@
         <div class="card">
             <div class = "obrazek">
                 <h1>Krewetki</h1>
-                <!-- <img src="https://www.mojegotowanie.pl/media/cache/default_view/uploads/media/recipe/0001/99/krewetki-na-ostro.jpeg" alt=""> -->
+                <img src="https://www.mojegotowanie.pl/media/cache/default_view/uploads/media/recipe/0001/99/krewetki-na-ostro.jpeg" alt="">
             </div>
                 <div class="tresc">
                     <p>Krewetki smażone na maśle z czosnkiem, 
@@ -122,6 +141,9 @@
         </div>
     </div>    
     </div>
+
+
+    
 
 </body>
 </html>
