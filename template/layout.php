@@ -8,11 +8,13 @@
     <title>Document</title>
 </head>
 <body>
-
+    <?php
+    require_once("views/login_view.php");
+    ?>
     <div class="navbar">
         <input type="button" name = "przepisy" value="Przepisy">
         <input type="button" name = "forum" value="Forum">
-        <input type="button" name = "zaloguj" value="Zaloguj">
+        <a href=""><input type="button" name = "zaloguj" value="Zaloguj"></a>
         <input type="button" name = "oNas" value="O nas">
         
         <div class="wyszukaj">
@@ -38,7 +40,7 @@
     
 
         <div class="right">
-        <p>Najlepsze przepisy</p> 
+        <center><p>Najlepsze przepisy</p> </center>
                 <ol id ="list">
                     <a href=""><li> <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
                      width="70" height="70"> Placki ziemniaczne</li></a>
@@ -75,7 +77,7 @@
     </div> -->
 
     <div class = "inspiracje">
-        <h1>Inspiracje</h1>
+        <center> <h1>Inspiracje</h1> </center>
     <div class="inspiracjeSrodek">
         <div class="card card-1">
             <div class = "obrazek">
