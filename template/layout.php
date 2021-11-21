@@ -8,13 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-    require_once("views/login_view.php");
-    ?>
+   
+    
     <div class="navbar">
         <input type="button" name = "przepisy" value="Przepisy">
         <input type="button" name = "forum" value="Forum">
-        <a href=""><input type="button" name = "zaloguj" value="Zaloguj"></a>
+        <a href="/?action=login"><input type="button" name = "zaloguj" value="Zaloguj"></a>
         <input type="button" name = "oNas" value="O nas">
         
         <div class="wyszukaj">
@@ -23,6 +22,12 @@
         </div>
        
     </div>
+
+    <?php
+        //if($page == 'login')
+        //    require_once('views/'.$action.'_view.php');
+      //  else
+    ?>
 
     <div class = "witajka">
         <!-- Można coś dorobić np przepis dnia albo cuś -->
@@ -43,19 +48,19 @@
         <center><p>Najlepsze przepisy</p> </center>
                 <ol id ="list">
                     <a href=""><li> <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
-                     width="70" height="70"> Placki ziemniaczne</li></a>
+                     width="70" height="70"> <span>Placki ziemniaczne</span> </li></a>
                     
                     <a href=""> <li> <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
-                     width="70" height="70"> Rosołek</li> </a>
+                     width="70" height="70"> <span>Rosołek</span> </li> </a>
                     
                      <a href=""><li><img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
-                     width="70" height="70"> Marchewka Marynowana</li> </a>
+                     width="70" height="70"> <span>Marchewka Marynowana<span></li> </a>
 
                      <a href=""><li> <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
-                     width="70" height="70"> Placki ziemniaczne</li></a>
+                     width="70" height="70"> <span>Placki ziemniaczne</span> </li></a>
 
                      <a href=""><li> <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
-                     width="70" height="70"> Placki ziemniaczne</li></a>
+                     width="70" height="70"> <span>Placki ziemniaczne</span> </li></a>
                 </ol>
 
         </div>

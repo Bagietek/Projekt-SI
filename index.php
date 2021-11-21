@@ -15,7 +15,9 @@ if(!empty($_GET['action'] )){
 
 $view = new View();
 
-$view->render("temp");
+$view->render($action);
+
+//require_once("views/login_view.php");
 
 //include(_ROOT_PATH.DIRECTORY_SEPARATOR . 'actions'.DIRECTORY_SEPARATOR.$action.'.php');
 //include(_ROOT_PATH.DIRECTORY_SEPARATOR . 'views'.DIRECTORY_SEPARATOR.$action.'.php');
