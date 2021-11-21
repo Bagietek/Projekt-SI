@@ -49,9 +49,67 @@
 /*Witajka*/
 
 .witajka{
- height: 200px;
+ height: 250px;
  background-image: url(https://static01.nyt.com/images/2021/09/01/dining/01egg-roudnup-1/01egg-roudnup-1-superJumbo.jpg?quality=75&auto=webp);
  background-repeat: no-repeat;
  background-attachment: fixed;
  background-size: 100% 100%;
+}
+
+/* Zawartosc strony */
+
+.container{
+    height: 500px;
+    background-color: aqua;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+}
+
+.container div{
+    margin: 20px;
+}
+
+.left{
+    height: 300px;
+    min-width: 250px;
+    background-color: blueviolet;
+}
+
+.middle{
+    height: 300px;
+    width: 700px;
+    background-color:darkgray;
+}
+
+.right{
+    height: 300px;
+    width: 300px;
+    background-color:chocolate
+}
+
+
+.inspiracje{
+    
+    padding: 60px 45px;
+   
+    background-color: darkseagreen;
+    display: grid;
+   
+}
+
+.inspiracjeSrodek{
+   /* max-width: 1200px; */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 30px;
+}
+
+.card{
+    margin-top: 20px;
+    max-width: 300px;
+    border-radius: 20px;
+    border: 1px solid black;
 }
