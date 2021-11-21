@@ -1,4 +1,6 @@
 <?php
+include("views/View.php");
+
 session_start();
 define('_ROOT_PATH', dirname(__FILE__));
 $actions = array("home","form"); // nazwy podstron
@@ -10,6 +12,11 @@ if(!empty($_GET['action'] )){
         $action = 'pageNotFound';
     }
 }
-include(_ROOT_PATH.DIRECTORY_SEPARATOR . 'actions'.DIRECTORY_SEPARATOR.$action.'.php');
-include(_ROOT_PATH.DIRECTORY_SEPARATOR . 'views'.DIRECTORY_SEPARATOR.$action.'.php');
+
+$view = new View();
+
+$view->render("temp");
+
+//include(_ROOT_PATH.DIRECTORY_SEPARATOR . 'actions'.DIRECTORY_SEPARATOR.$action.'.php');
+//include(_ROOT_PATH.DIRECTORY_SEPARATOR . 'views'.DIRECTORY_SEPARATOR.$action.'.php');
 ?>
