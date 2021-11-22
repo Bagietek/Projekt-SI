@@ -1,0 +1,255 @@
+
+body{
+    background: url(https://i.pinimg.com/564x/2d/26/05/2d260562584759911ab49f11e7d51add.jpg);
+}
+
+/* Navbar */
+
+.navbar{
+    height: 50px;
+    background-color: rgb(139, 195, 74);
+    border-radius: 20px;
+    border: 1px solid black;
+    display: flex;
+    
+}
+
+.navbar input[type=button]{
+    margin-top: 10px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(175, 180, 43);
+    margin-left: 20px;
+    Font-family: Copperplate, Copperplate Gothic Light, fantasy;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.wyszukaj{
+    margin-left: auto;
+    margin-right: 10px;   
+}
+
+.wyszukaj input[type="search"]{
+    margin-left: auto;
+    margin-right: 10px;
+    padding: 8px;
+    background-color: rgb(139, 195, 74);
+    color: white;
+    Font-family: Dejavu Sans, Arial, Verdana, sans-serif;
+    border-radius: 20px;
+
+}
+.wyszukaj input[type="search"]::-webkit-input-placeholder{
+    color: white;
+   
+}
+
+.wyszukaj input[type="button"]{
+    background-color: rosybrown;
+}
+
+/*Witajka*/
+
+.witajka{
+ height: 250px;
+ background-image: url(https://static01.nyt.com/images/2021/09/01/dining/01egg-roudnup-1/01egg-roudnup-1-superJumbo.jpg?quality=75&auto=webp);
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: 100% 100%;
+}
+
+/* Zawartosc strony */
+
+.container{
+    /* height: 500px; */
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+}
+
+.container div{
+    margin: 20px;
+
+}
+
+
+
+.middle{
+    min-height: 400px;
+    min-width: 900px;
+    background:url("https://pliki.doradcasmaku.pl/soczysty-kurczak-pieczony-w-calosci0-4.webp");
+    background-size: cover;
+    border: 5px solid black;
+}
+
+.middleWhite{
+    height: 70px;
+    width: 200px;
+    background: white;
+    position: relative;
+    top:-40px;
+    left: -45px;
+    border: 6px solid black;
+}
+
+.middle .text{
+    border: 6px solid black;
+    width: 550px;
+    background: white;
+    position: relative;
+    top: 70%;
+    left: 40%;
+    font-weight: 900;
+    font-size: 18px;
+
+}
+.middleWhite img{
+    width: 100%;
+    height: 100%; 
+}
+
+.right{
+    width: 300px;
+    border: 3.5px solid black;
+    border-radius: 20px;
+    background: whitesmoke;
+    padding-left: 50px;
+    font-size: larger;
+    
+}
+.right li, ol{
+    margin-top: 10px;
+    margin-left: -30px;
+    list-style-type: none;
+    font-size: 18px;
+}
+
+.right a{
+    text-decoration: none;
+}
+
+.right span{
+    margin-left: 5px;
+    position: relative;
+    top: -27px;
+}
+
+
+/* .inspiracjeSrodek :hover{
+    transform: scale(1.1);
+} */
+
+/* ------------- Inspiracje ----------------- */
+
+.inspiracje{
+    margin-top: 30px;
+    padding: 60px 45px;
+    margin-left: 70px;
+    margin-right: 70px;
+    background:url(https://i.pinimg.com/564x/a2/ea/9b/a2ea9b787e79a29f32496efe8b649631.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px solid black;
+    display: grid;
+   
+}
+
+.inspiracjeSrodek{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 30px;
+    
+    position: relative;
+}
+
+.card{
+    background: url(https://media.istockphoto.com/photos/bokeh-picture-id1248398407?k=20&m=1248398407&s=612x612&w=0&h=VRV4vktTyIkDmJMsqLFDwjSpvczM-DryL5rTMXBMZKE=);
+    margin-top: 20px;
+    max-width: 300px;
+    border-radius: 20px;
+    border: 3px solid black;
+    transition: all .2s ease-in-out; 
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.card img{
+    height: 100px;
+    width: 200px;
+}
+
+.card .tresc{
+    margin-bottom: 20px;
+    margin-right: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+   
+}
+
+.card .tresc p{
+    margin: 3px;
+}
+
+.card div{
+    margin-left: 10px;
+}
+
+
+
+
+
+/* ------------------ Logowanie ---------------- */
+
+.loginContainer{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+    font-family: 'Trebuchet MS', sans-serif;
+    
+}
+
+
+.loginContainer .items{
+    border: 2px solid black;
+    margin-top: -20px;
+    border-radius: 20px;
+}
+
+.loginContainer .header{
+    width: 300px;
+    height: 50px;
+    background-color: rgb(110, 187, 21);
+    border: 1px solid black;
+    padding-top: 20px;
+}
+
+
+.header{
+    padding: 0px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.loginContainer input{
+    padding: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.loginContainer p{
+    margin-top: -20px;
+}
