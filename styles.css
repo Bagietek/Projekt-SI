@@ -1,6 +1,6 @@
 
 body{
-    background: url(https://i.pinimg.com/564x/f8/3a/f9/f83af9b6124b0cd215fbe9e53af42645.jpg);
+    background: url(https://i.pinimg.com/564x/2d/26/05/2d260562584759911ab49f11e7d51add.jpg);
 }
 
 /* Navbar */
@@ -118,10 +118,15 @@ body{
     border: 3.5px solid black;
     border-radius: 20px;
     background: whitesmoke;
+    padding-left: 50px;
+    font-size: larger;
+    
 }
 .right li, ol{
     margin-top: 10px;
+    margin-left: -30px;
     list-style-type: none;
+    font-size: 18px;
 }
 
 .right a{
@@ -144,9 +149,11 @@ body{
 .inspiracje{
     margin-top: 30px;
     padding: 60px 45px;
-    margin-left: 30px;
-    margin-right: 30px;
-    background: url(https://i.pinimg.com/564x/d5/ed/02/d5ed0235be8acf4379c6b8cdf48d9517.jpg);
+    margin-left: 70px;
+    margin-right: 70px;
+    background:url(https://i.pinimg.com/564x/a2/ea/9b/a2ea9b787e79a29f32496efe8b649631.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     border: 5px solid black;
     display: grid;
    

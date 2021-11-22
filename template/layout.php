@@ -45,22 +45,22 @@
     
 
         <div class="right">
-        <center><p>Najlepsze przepisy</p> </center>
+       <p>Najlepsze przepisy:</p>
                 <ol id ="list">
                     <a href=""><li> <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
                      width="70" height="70"> <span>Placki ziemniaczne</span> </li></a>
                     
-                    <a href=""> <li> <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
+                    <a href=""> <li> <img src="https://kulinarnapolska.org/wp-content/uploads/2019/06/rosol-z-pierozkami-kolduny-przepis-5.jpg"
                      width="70" height="70"> <span>Rosołek</span> </li> </a>
                     
-                     <a href=""><li><img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
+                     <a href=""><li><img src="https://odczarujgary.pl/wp-content/uploads/2018/04/marynowane-marchewki.jpg"
                      width="70" height="70"> <span>Marchewka Marynowana<span></li> </a>
 
-                     <a href=""><li> <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
-                     width="70" height="70"> <span>Placki ziemniaczne</span> </li></a>
+                     <a href=""><li> <img src="https://www.przyslijprzepis.pl/media/cache/big/uploads/media/recipe/0008/40/wiosenne-jajka-faszerowane.jpeg"
+                     width="70" height="70"> <span>Jajka faszerowane</span> </li></a>
 
-                     <a href=""><li> <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-5Egg-wV4M-Mn49_pieczona-kaczka-marynowana-w-piwie-nowy-rewelacyjny-przepis-na-kaczke-po-pekinsku-664x442-nocrop.jpg"
-                     width="70" height="70"> <span>Placki ziemniaczne</span> </li></a>
+                     <a href=""><li> <img src="https://polki.pl/foto/1_X_LARGE/ile-kalorii-ma-schabowy-z-ziemniakami-2464036.jpg"
+                     width="70" height="70"> <span>schabowy z ziemniaczkami</span> </li></a>
                 </ol>
 
         </div>
