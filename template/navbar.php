@@ -28,6 +28,7 @@
             <input type="search" name="szukaj" placeholder="Wyszukaj">
             <input type="button" name="szukajButton" value="Szukaj">
         </div>
+
        
     </div>
 </body>

@@ -27,18 +27,18 @@
                 $_SESSION['permission'] = $user['permission'];
                     //var_dump($_SESSION['permission']);
                 $_SESSION['action'] = 'home';
-                $_SESSION['error'] = 0;
+                $_SESSION['loginerror'] = 0;
                 header('location: index.php');   
             }
             else
             {
-                $_SESSION['error'] = 1;
+                $_SESSION['loginerror'] = 1;
                 header('location: index.php'); 
             }
         }
         else
         {
-            $_SESSION['error'] = 1;
+            $_SESSION['loginerror'] = 1;
             header('location: index.php'); 
         }
     }

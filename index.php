@@ -6,7 +6,7 @@ include("views/View.php");
 
 
 define('_ROOT_PATH', dirname(__FILE__));
-$actions = array("home","login","logout","recipes","forum","aboutus","users","deleteuser"); // nazwy podstron
+$actions = array("home","login","logout","recipes","forum","aboutus","users","deleteuser","signup"); // nazwy podstron
 if(!isset($_SESSION['action']))
     $_SESSION['action'] = 'home';
 if(!empty($_GET['action'] )){
@@ -16,10 +16,17 @@ if(!empty($_GET['action'] )){
         $_SESSION['action'] = 'pageNotFound';
     }
 }
-if(isset($_SESSION['error'])&&$_SESSION['action']!='login')
+if(isset($_SESSION['loginerror'])&&$_SESSION['action']!='login')
 {
-    $_SESSION['error'] = 0;
+    $_SESSION['loginerror'] = 0;
 }
+if(($_SESSION['action']!='signup')&&(isset($_SESSION['signUpEmptyError'])||isset($_SESSION['signUpExistError'])||isset($_SESSION['signUpNotEqualError'])))
+{
+    $_SESSION['signUpEmptyError'] = 0;
+    $_SESSION['signUpExistError'] = 0;
+    $_SESSION['signUpNotEqualError'] = 0;
+}
+
 $view = new View();
 
 $view->render($_SESSION['action']);

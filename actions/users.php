@@ -8,6 +8,6 @@
 	{
 		echo 'Błąd: '.$e->getMessage();
 	}
-    $query = $db->query('SELECT * FROM user');
+    $query = $db->query('SELECT id,login,nick,email,permission FROM user');
     $users = $query->fetchAll();
 ?>
