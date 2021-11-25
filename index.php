@@ -16,6 +16,8 @@ if(!empty($_GET['action'] )){
         $_SESSION['action'] = 'pageNotFound';
     }
 }
+if(isset($_SESSION['error'])&&$_SESSION['action']!='login')
+    $_SESSION['error'] = 0;
 
 $view = new View();
 
