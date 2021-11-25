@@ -16,11 +16,14 @@ if(!empty($_GET['action'] )){
         $_SESSION['action'] = 'pageNotFound';
     }
 }
-
+if(isset($_SESSION['error'])&&$_SESSION['action']!='login')
+{
+    $_SESSION['error'] = 0;
+}
 $view = new View();
 
 $view->render($_SESSION['action']);
-//require_once("views/login_view.php");
+
 
 //include(_ROOT_PATH.DIRECTORY_SEPARATOR . 'actions'.DIRECTORY_SEPARATOR.$action.'.php');
 //include(_ROOT_PATH.DIRECTORY_SEPARATOR . 'views'.DIRECTORY_SEPARATOR.$action.'.php');
