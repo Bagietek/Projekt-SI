@@ -19,7 +19,7 @@
         <p>Powtórz Hasło: </p>
         <?php if(isset($_SESSION['signUpNotEqualError'])&&$_SESSION['signUpNotEqualError']==1) echo '<br><p style="color:red;">Podano różne hasła!</p>';?>
 		
-		<input type="text" name="email" id="">
+		<input type="email" name="email" id="">
         <p>Email: </p>
         <br>
         <?php if(isset($_SESSION['signUpEmptyError'])&&$_SESSION['signUpEmptyError']==1) echo '<br><p style="color:red;">Wypełnij wszystkie pola!</p>';?>
