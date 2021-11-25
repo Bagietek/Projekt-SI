@@ -9,20 +9,24 @@
 </head>
 <body>
 <div class="navbar">
-        <a href="/?action=home"><input type="button" name = "glowna" value="Strona główna"></a>
-        <input type="button" name = "przepisy" value="Przepisy">
-        <input type="button" name = "forum" value="Forum">
+        <a href="/?action=home"><input type="button" name = "home" value="Strona główna"></a>
+        <a href="/?action=recipes"><input type="button" name = "recipes" value="Przepisy"></a>
+        <a href="/?action=forum"><input type="button" name = "forum" value="Forum"></a>
         <?php
             if(isset($_SESSION['logged']))
-                echo "<a href='/?action=logout'><input type='button' name = 'wyloguj' value='wyloguj'></a>";
+                echo "<a href='/?action=logout'><input type='button' name = 'logout' value='Wyloguj'></a>";
             else
-                echo "<a href='/?action=login'><input type='button' name = 'zaloguj' value='Zaloguj'></a>";
+                echo "<a href='/?action=login'><input type='button' name = 'login' value='Zaloguj'></a>";
         ?>
-        <input type="button" name = "oNas" value="O nas">
+        <a href="/?action=aboutus"><input type="button" name = "aboutus" value="O nas"></a>
+        <?php
+            if(isset($_SESSION['logged'])&&$_SESSION['permission']=='admin')
+            echo "<a href='/?action=users'><input type='button' name = 'users' value='Użytkownicy'></a>";
+        ?>
         
         <div class="wyszukaj">
-            <input type="search" name="szukaj" placeholder="wyszukaj">
-            <input type="button" name="szukajButton" value="szukaj">
+            <input type="search" name="szukaj" placeholder="Wyszukaj">
+            <input type="button" name="szukajButton" value="Szukaj">
         </div>
        
     </div>

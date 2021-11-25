@@ -253,3 +253,24 @@ body{
 .loginContainer p{
     margin-top: -20px;
 }
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  th {
+    background-color: rgb(110, 187, 21);
+    color: white;
+  }
+  tr:nth-child(even) {background-color:aqua;}
+  tr:nth-child(odd) {background-color:bisque;}
+  ul{
+      list-style-type: none;
+  }
+  .wlist{
+    text-align: left;
+  }
+.users_table{
+    vertical-align: middle;
+
+}
