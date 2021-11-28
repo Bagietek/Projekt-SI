@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 22 Lis 2021, 09:39
+-- Czas generowania: 28 Lis 2021, 16:00
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.11
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `projekt`
+-- Baza danych: `siproj`
 --
 
 -- --------------------------------------------------------
@@ -77,8 +77,16 @@ CREATE TABLE `user` (
   `email` varchar(128) NOT NULL,
   `picture` varchar(32) NOT NULL COMMENT 'profilowe ścieżka',
   `description` varchar(256) NOT NULL COMMENT 'opis profilu',
-  `permission` enum('admin','user') NOT NULL
+  `permission` enum('admin','user','mod') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `user`
+--
+
+INSERT INTO `user` (`id`, `login`, `password`, `nick`, `email`, `picture`, `description`, `permission`) VALUES
+(1, 'user', '9d4e1e23bd5b727046a9e3b4b7db57bd8d6ee684', 'Bartek', 'bartek@random.com', '', '', 'admin'),
+(5, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test', 'test@test', '', '', 'user');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -134,7 +142,7 @@ ALTER TABLE `recipe`
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

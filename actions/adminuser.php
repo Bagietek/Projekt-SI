@@ -8,12 +8,13 @@ try
 		echo 'Błąd: '.$e->getMessage();
 	}
     $id =  $_GET['param'];
-	// sprawdenie czy nie jest usuwany ostatni admin?
+    $perm = $_GET['type'];
 
-	// usunięcie 
+
 	try{
-		$statement = $db->prepare('DELETE FROM user WHERE id = :id');
+		$statement = $db->prepare('UPDATE user SET permission=:perm WHERE id=:id');
 		$statement->bindValue(':id', $id, PDO::PARAM_INT);
+        $statement->bindValue(':perm',$perm,PDO::PARAM_STR);
 		$statement->execute();
 	}catch(PDOException $e){
 		$db->rollBack();

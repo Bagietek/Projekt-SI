@@ -53,6 +53,7 @@ if(isset($_POST['submit']))
                 }
                 catch (PDOException $e) 
                 {
+                    $db->rollBack();
                     echo "Błąd: ".$e->getMessage();  
                 } 
             }

@@ -6,7 +6,7 @@ include("views/View.php");
 
 
 define('_ROOT_PATH', dirname(__FILE__));
-$actions = array("home","login","logout","recipes","forum","aboutus","users","deleteuser","signup"); // nazwy podstron
+$actions = array("home","login","logout","recipes","forum","aboutus","users","deleteuser","signup","adminuser"); // nazwy podstron
 if(!isset($_SESSION['action']))
     $_SESSION['action'] = 'home';
 if(!empty($_GET['action'] )){

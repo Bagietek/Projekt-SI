@@ -16,8 +16,19 @@
                     "<td>".$user['nick']."</td>".
                     "<td>".$user['email']."</td>".
                     "<td>".$user['permission']."</td>";
-        
-                echo "<td><a href='/?action=deleteuser&param=".$user['id']."'>Usuń</a></td>";
+                if($user['permission'] == 'user'){
+                    echo "<td><a href='/?action=deleteuser&param=".$user['id']."'>Usuń</a> <br>";
+                    echo "<a href=/?action=adminuser&param=$user[id]&type=admin>Admin</a> <br>";
+                    echo "<a href=/?action=adminuser&param=$user[id]&type=mod>Moderator</a> </td>";
+                }else if($user['permission'] == 'mod'){
+                    echo "<td><a href='/?action=deleteuser&param=".$user['id']."'>Usuń</a> <br>";
+                    echo "<a href=/?action=adminuser&param=$user[id]&type=admin>Admin</a> <br>";
+                    echo "<a href=/?action=adminuser&param=$user[id]&type=user>Usuń moda</a> </td>";
+                }else{ // admin
+                    echo "<td><a href='/?action=deleteuser&param=".$user['id']."'>Usuń</a><br>";
+                    echo "<a href=/?action=adminuser&param=$user[id]&type=user>Usuń admina</a> </td>";
+                }
+                
                 echo '</tr>';
             }
         ?>
