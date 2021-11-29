@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Lis 2021, 16:00
+-- Czas generowania: 29 Lis 2021, 11:06
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.11
 
@@ -45,9 +45,26 @@ CREATE TABLE `forum` (
   `id` int(11) NOT NULL,
   `userID` int(11) NOT NULL COMMENT 'twórca',
   `title` varchar(32) NOT NULL,
-  `picture` varchar(32) NOT NULL COMMENT 'ścieżka do pliku',
+  `picture` varchar(32) DEFAULT NULL COMMENT 'ścieżka do pliku',
   `content` varchar(1024) NOT NULL COMMENT 'ścieżka lub treść?'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `forum`
+--
+
+INSERT INTO `forum` (`id`, `userID`, `title`, `picture`, `content`) VALUES
+(1, 1, 'Testowy post', '', 'Testowy post, proszę o pomoc w ugotowaniu krewetki, ciągle ucieka.'),
+(2, 5, 'Testowy post 2', 'miecz.png', 'Testowy post 2, krewetka nadal ucieka.'),
+(3, 5, 'Testowy post 3', '', 'Testowy post 3, krewetka złapana ponownie.'),
+(4, 1, 'Testing123', NULL, 'testing123'),
+(5, 1, 'Testing123', NULL, 'testing123'),
+(6, 1, 'a', NULL, 'zdjęcie'),
+(7, 1, 'a', NULL, 'zdjęcie'),
+(8, 1, 'Zdjęcie', '', '123'),
+(11, 1, 'Zdjęcie', 'wng563jd9abtk0v.png', '123345'),
+(12, 1, 'test substr', NULL, '// 7 = .image/'),
+(13, 1, 'test substr', 't3h8dsz7i7rwpnxryse7.ng', '// 7 = .image/');
 
 -- --------------------------------------------------------
 
@@ -75,7 +92,7 @@ CREATE TABLE `user` (
   `password` varchar(64) NOT NULL,
   `nick` varchar(20) NOT NULL,
   `email` varchar(128) NOT NULL,
-  `picture` varchar(32) NOT NULL COMMENT 'profilowe ścieżka',
+  `photo` varchar(32) NOT NULL COMMENT 'profilowe ścieżka',
   `description` varchar(256) NOT NULL COMMENT 'opis profilu',
   `permission` enum('admin','user','mod') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -84,9 +101,9 @@ CREATE TABLE `user` (
 -- Zrzut danych tabeli `user`
 --
 
-INSERT INTO `user` (`id`, `login`, `password`, `nick`, `email`, `picture`, `description`, `permission`) VALUES
-(1, 'user', '9d4e1e23bd5b727046a9e3b4b7db57bd8d6ee684', 'Bartek', 'bartek@random.com', '', '', 'admin'),
-(5, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test', 'test@test', '', '', 'user');
+INSERT INTO `user` (`id`, `login`, `password`, `nick`, `email`, `photo`, `description`, `permission`) VALUES
+(1, 'user', '9d4e1e23bd5b727046a9e3b4b7db57bd8d6ee684', 'Bartek', 'bartek@random.com', 'forsene.jpg', 'Administrator serwisu SuperPrzepisy.pl', 'admin'),
+(5, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test', 'test@test', '', 'testowy description', 'user');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -130,7 +147,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT dla tabeli `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT dla tabeli `recipe`
