@@ -9,7 +9,7 @@ try
 	}
     $id =  $_GET['param'];
 	// sprawdenie czy nie jest usuwany ostatni admin?
-
+	
 	// usunięcie 
 	try{
 		$statement = $db->prepare('DELETE FROM user WHERE id = :id');
