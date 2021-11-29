@@ -30,23 +30,25 @@ if(isset($_POST['submit'])){
                     $max = 500000 * 10; // ~5 MB max
                     $size = $_FILES['imgUpload']['size'];
                     $temp_name = $_FILES['imgUpload']['tmp_name'];
-                    do{// nadawanie losowej unikatowej nazwy dla pliku
-                        $type = $_FILES['imgUpload']['type']; // wypluwa .image/png naprawione niżej
-                        $type = '.'. substr($type,7); // 7 = .image/
-                        $name = generateRandomString();
-                        $name .= $type;
-                        $destination = './images/forum/'.$name;
-                    }while(file_exists($destination));
                     
-                    if($size <= 0){
-                        $errors['addPostPhoto'] = 1;
-                    }elseif($size > $max){
-                        $errors['addPostPhoto'] = 1;
-                    }else{
-                        if(!move_uploaded_file($temp_name,$destination)){
+                    // poprawnione nadawanie nazwy pliku na podstawie sumy kontrolnej sha1
+                    $type = $_FILES['imgUpload']['type']; // wypluwa .image/png naprawione niżej
+                    $type = '.'. substr($type,6); // 6 = .image/
+                    $name = sha1_file($_FILES['imgUpload']['tmp_name'],false); // obliczanie sumy kontrolnej
+                    $name .= $type;
+                    $destination = './images/forum/'.$name;
+                    if(!file_exists($destination)){ // sprawdzenie czy takie samo zdjęcie nie znajduje się już na dysku
+                        if($size <= 0){
                             $errors['addPostPhoto'] = 1;
+                        }elseif($size > $max){
+                            $errors['addPostPhoto'] = 1;
+                        }else{
+                            if(!move_uploaded_file($temp_name,$destination)){
+                                $errors['addPostPhoto'] = 1;
+                            }
                         }
                     }
+                    
                 }
             }
             // zapis do bazy
@@ -74,16 +76,5 @@ if($validation){
     header("Refresh: 0; URL = /index.php?action=forum");
 }
 
-
-function generateRandomString() {
-    $length = 20; // w bazie max 32, 28 + .png = 31, dla różnych formatów inaczej
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
-    $charactersLength = strlen($characters);
-    $randomString = '';
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
-    }
-    return $randomString;
-}
 
 ?>

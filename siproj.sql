@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 29 Lis 2021, 11:06
+-- Czas generowania: 29 Lis 2021, 19:00
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.11
 
@@ -45,7 +45,7 @@ CREATE TABLE `forum` (
   `id` int(11) NOT NULL,
   `userID` int(11) NOT NULL COMMENT 'twórca',
   `title` varchar(32) NOT NULL,
-  `picture` varchar(32) DEFAULT NULL COMMENT 'ścieżka do pliku',
+  `picture` varchar(64) DEFAULT NULL COMMENT 'ścieżka do pliku',
   `content` varchar(1024) NOT NULL COMMENT 'ścieżka lub treść?'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -64,7 +64,15 @@ INSERT INTO `forum` (`id`, `userID`, `title`, `picture`, `content`) VALUES
 (8, 1, 'Zdjęcie', '', '123'),
 (11, 1, 'Zdjęcie', 'wng563jd9abtk0v.png', '123345'),
 (12, 1, 'test substr', NULL, '// 7 = .image/'),
-(13, 1, 'test substr', 't3h8dsz7i7rwpnxryse7.ng', '// 7 = .image/');
+(13, 1, 'test substr', 't3h8dsz7i7rwpnxryse7.ng', '// 7 = .image/'),
+(14, 1, 'refresh test', 'xnbvye8f09tyearnlv8v.ng', 'test'),
+(15, 1, 'hash test', 'bK29MqT8Zrnc41WpfdHD.ng', '123'),
+(16, 1, 'refresh test', 'Jikq8WmfBE6BnjgTmELw.png', '123'),
+(17, 1, 'png test', 'kEoHfM5vBoKZX4erGWqZ.png', '123'),
+(18, 1, 'sha test', 'NTOOdSi9aliTreeLE3br.png', '123'),
+(19, 1, 'sha test1', 'Pz1RJOVVuW4FNOk96yTV.png', '123'),
+(20, 1, 'Test sha1', '92ad2e67e1744edf7dba4551080713c378e53107.png', 'sha1 - miecz = 92ad2e67e1744edf7dba4551080713c378e53107'),
+(21, 1, 'test sha1 nr 2', '92ad2e67e1744edf7dba4551080713c378e53107.png', 'sha 1 miecz = 92ad2e67e1744edf7dba4551080713c378e53107');
 
 -- --------------------------------------------------------
 
@@ -76,7 +84,7 @@ CREATE TABLE `recipe` (
   `id` int(11) NOT NULL,
   `userID` int(11) NOT NULL COMMENT 'twórca',
   `title` varchar(32) NOT NULL,
-  `picture` varchar(32) NOT NULL COMMENT 'ścieżka do zdjęcia',
+  `picture` varchar(50) NOT NULL COMMENT 'ścieżka do zdjęcia',
   `content` varchar(1024) NOT NULL COMMENT 'treść przepisu albo ścieżka do pliku txt?'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -92,7 +100,7 @@ CREATE TABLE `user` (
   `password` varchar(64) NOT NULL,
   `nick` varchar(20) NOT NULL,
   `email` varchar(128) NOT NULL,
-  `photo` varchar(32) NOT NULL COMMENT 'profilowe ścieżka',
+  `photo` varchar(64) NOT NULL COMMENT 'profilowe ścieżka',
   `description` varchar(256) NOT NULL COMMENT 'opis profilu',
   `permission` enum('admin','user','mod') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -147,7 +155,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT dla tabeli `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT dla tabeli `recipe`
