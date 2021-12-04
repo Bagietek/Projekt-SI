@@ -5,72 +5,74 @@
 </head>
 <body>
     <!-- trzeba zrobić osobny css do tego  -->
-<div class = "inspiracje">
-        <center> <h1><?php echo "$row[title]"; ?></h1> </center>
-    <div class="inspiracjeSrodek">
-        <div class="card-forum">
-            <div class = "forumPic">
-                <?php
-                    echo "<h1>$row[title]</h1>";
-                    if($row['picture'] != null){
-                        echo "<img src=images/forum/$row[picture] width=200 height=200>";
-                    }
-                ?>
-            </div>
-                <div class="tresc">
-                    <p><?php echo "$row[content]"; ?></p>
-                    
-                </div>
-                <?php echo "<center><a href='/?action=forum'><input type='button' value='Komentarze'></a></center>"; ?>
-        </div>
-        
-        <br>
+    
+<div class = "inspiracje-post">
+        <center>  
         <?php
-            /*foreach($query as $row){
-                echo "<div class=card-forum>";
-                    echo "<div class=forumPic>";
+            if(isset($_SESSION['permission'])){
+                if($_SESSION['permission'] == 'admin' || $_SESSION['permission'] == 'mod' || $row['userID'] == $_SESSION['logged']){
+                    echo "<center><a href='/?action=deletepost&id=$row[id]&place=forum'><input type='button' class='deleteButton' value='Usuń post'></a></center>";
+                }
+            }
+        ?>
+        </center>
+    <div class="inspiracjeSrodek-post">
+        <center>
+            <div class="card-post">
+                <div class = "postPic">
+                    <?php
                         echo "<h1>$row[title]</h1>";
                         if($row['picture'] != null){
                             echo "<img src=images/forum/$row[picture] width=200 height=200>";
                         }
-                    echo "</div>";  
-                    echo "<div class=tresc>";
-                        echo "<p>$row[content]</p>";
-                    echo "</div>";
-                    echo "<div class=tresc>";
-                        echo "<div class=profilePic>";
-                        if($row['photo'] == null){
-                            echo "<img src=images/profile/stock.png width=50 height=50>";
-                        }else{
-                            echo "<img src=images/profile/$row[photo] width=50 height=50>";
+                    ?>
+                </div>
+                    <div class="tresc">
+                        <p><?php echo "$row[content]"; ?></p>
+                        
+                    </div>
+
+                    <?php
+                        // komentarze
+                        if($statementUsers->rowCount() > 0){
+                            echo "<h1>Komentarze</h1>";
+                        }
+                        
+                        foreach($statementUsers as $rowK){
+                            echo "<div class=tresc>";
+                            echo "$rowK[content]";
+                            echo "<br>";
+                            if($rowK['photo'] != null){
+                                echo "<img src=images/profile/$rowK[photo] width=50 height=50>";
+                            }else{
+                                echo "<img src=images/profile/stock.png width=50 height=50>";
+                            }
+                            if(isset($_SESSION['permission'])){
+                                if($_SESSION['permission'] == 'admin' || $_SESSION['permission'] == 'mod' ||  $rowK['userID'] == $_SESSION['logged']){
+                                    echo "<center><a href='/?action=deletecomment&id=$rowK[id]&idP=$id&place=forum'><input type='button' class='deleteButton' value='Usuń komentarz'></a></center>";
+                                }
+                            }
+                            echo "</div>";
                         }
                     
-                        echo "<p>$row[nick]: $row[description]</p>";
-                        echo "</div>";
-                    echo "</div>";
-                    
-                    echo "<center><a href='/?action=post&id=$row[fID]'><input type='button' value='Komentarze'></a></center>";
-            
-                echo "</div>";
-            }*/
-        ?>
-    </div>    
-</div>
 
+
+                    
+                    if(isset($_SESSION['logged'])){
+                        echo "<center><a href='/?action=addcomment&type=forum&id=$row[id]'><input type='button' value='Dodaj komentarz'></a></center>"; 
+                    }else{
+                        echo "<center><a href='/?action=login'><input type='button' value='Zaloguj się aby dodać komentarz'></a></center>"; 
+                    }
+                    ?>
+            </div>
+        </center>
+        
+        <br>
+        
+    </div>    
+    
+</div>
+        
 </body>
 </html>
 
-<!-- 
-        <div class="card-forum">
-            <div class = "obrazek">
-                <h1>Krewetki</h1>
-                <img src="https://www.mojegotowanie.pl/media/cache/default_view/uploads/media/recipe/0001/99/krewetki-na-ostro.jpeg" width="200" height="200">
-            </div>
-                <div class="tresc">
-                    <p>Krewetki smażone na maśle z czosnkiem, 
-                        natką i papryczką chili. Podlewane białym winem, podawane z bagietką. 
-                        Najlepszy i najprostszy sposób na krewetki!</p>
-                </div>
-        </div>
-
- -->
