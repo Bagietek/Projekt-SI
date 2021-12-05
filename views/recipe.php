@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Post</title>
+    <title>Przepis</title>
 </head>
 <body>
+    <!-- CSS taki sam jak post -->
 <div class = "inspiracje-post">
         <center>  
         <?php
             if(isset($_SESSION['permission'])){
                 if($_SESSION['permission'] == 'admin' || $_SESSION['permission'] == 'mod' || $row['userID'] == $_SESSION['logged']){
-                    echo "<center><a href='/?action=deletepost&id=$row[id]&place=forum'><input type='button' class='deleteButton' value='Usuń post'></a></center>";
+                    echo "<center><a href='/?action=deletepost&id=$row[id]&place=recipe'><input type='button' class='deleteButton' value='Usuń przepis'></a></center>";
                 }
             }
         ?>
@@ -21,7 +22,7 @@
                     <?php
                         echo "<h1>$row[title]</h1>";
                         if($row['picture'] != null){
-                            echo "<img src=images/forum/$row[picture] width=200 height=200>";
+                            echo "<img src=images/recipes/$row[picture] width=200 height=200>";
                         }
                     ?>
                 </div>
@@ -47,7 +48,7 @@
                             }
                             if(isset($_SESSION['permission'])){
                                 if($_SESSION['permission'] == 'admin' || $_SESSION['permission'] == 'mod' ||  $rowK['userID'] == $_SESSION['logged']){
-                                    echo "<center><a href='/?action=deletecomment&id=$rowK[id]&idP=$id&place=forum'><input type='button' class='deleteButton' value='Usuń komentarz'></a></center>";
+                                    echo "<center><a href='/?action=deletecomment&id=$rowK[id]&idP=$id&place=recipe'><input type='button' class='deleteButton' value='Usuń komentarz'></a></center>";
                                 }
                             }
                             echo "</div>";
@@ -57,7 +58,7 @@
 
                     
                     if(isset($_SESSION['logged'])){
-                        echo "<center><a href='/?action=addcomment&type=forum&id=$row[id]'><input type='button' value='Dodaj komentarz'></a></center>"; 
+                        echo "<center><a href='/?action=addcomment&type=recipe&id=$row[id]'><input type='button' value='Dodaj komentarz'></a></center>"; 
                     }else{
                         echo "<center><a href='/?action=login'><input type='button' value='Zaloguj się aby dodać komentarz'></a></center>"; 
                     }

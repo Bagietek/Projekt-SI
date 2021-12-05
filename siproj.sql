@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 29 Lis 2021, 19:00
+-- Czas generowania: 05 Gru 2021, 16:33
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.11
 
@@ -34,6 +34,15 @@ CREATE TABLE `comment` (
   `place` enum('forum','recipe') NOT NULL COMMENT 'komentarz w forum czy recipe',
   `postID` int(11) NOT NULL COMMENT 'ID postu komentowanego'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `comment`
+--
+
+INSERT INTO `comment` (`id`, `userID`, `content`, `place`, `postID`) VALUES
+(5, 1, 'Krewetka ucieka ', 'forum', 1),
+(13, 1, 'Yeet', 'forum', 1),
+(17, 1, 'Testowy komentarz do przepisów 2', 'recipe', 1);
 
 -- --------------------------------------------------------
 
@@ -72,7 +81,10 @@ INSERT INTO `forum` (`id`, `userID`, `title`, `picture`, `content`) VALUES
 (18, 1, 'sha test', 'NTOOdSi9aliTreeLE3br.png', '123'),
 (19, 1, 'sha test1', 'Pz1RJOVVuW4FNOk96yTV.png', '123'),
 (20, 1, 'Test sha1', '92ad2e67e1744edf7dba4551080713c378e53107.png', 'sha1 - miecz = 92ad2e67e1744edf7dba4551080713c378e53107'),
-(21, 1, 'test sha1 nr 2', '92ad2e67e1744edf7dba4551080713c378e53107.png', 'sha 1 miecz = 92ad2e67e1744edf7dba4551080713c378e53107');
+(21, 1, 'test sha1 nr 2', '92ad2e67e1744edf7dba4551080713c378e53107.png', 'sha 1 miecz = 92ad2e67e1744edf7dba4551080713c378e53107'),
+(22, 1, 'sha1 test', 'c98053898030009996d5565d887383b38e32198d.png', '1 pixel sha 1'),
+(23, 1, 'sha1 test nr 2', 'c98053898030009996d5565d887383b38e32198d.png', '1 pixel sha1'),
+(27, 1, '123', NULL, '123');
 
 -- --------------------------------------------------------
 
@@ -84,9 +96,19 @@ CREATE TABLE `recipe` (
   `id` int(11) NOT NULL,
   `userID` int(11) NOT NULL COMMENT 'twórca',
   `title` varchar(32) NOT NULL,
-  `picture` varchar(50) NOT NULL COMMENT 'ścieżka do zdjęcia',
+  `picture` varchar(50) DEFAULT NULL COMMENT 'ścieżka do zdjęcia',
   `content` varchar(1024) NOT NULL COMMENT 'treść przepisu albo ścieżka do pliku txt?'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `recipe`
+--
+
+INSERT INTO `recipe` (`id`, `userID`, `title`, `picture`, `content`) VALUES
+(1, 1, 'Testowy przepis', '', 'Testowy przepis1'),
+(2, 1, 'Testowy przepis', '', 'Testowy przepis2'),
+(3, 1, 'Testowanie dodawania', '20a820106b48bc607a985e87f818d59b617a20fd.png', 'Testowanie dodawania 1'),
+(5, 5, 'Testing1231', '20a820106b48bc607a985e87f818d59b617a20fd.png', '123');
 
 -- --------------------------------------------------------
 
@@ -149,25 +171,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT dla tabeli `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT dla tabeli `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT dla tabeli `recipe`
 --
 ALTER TABLE `recipe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

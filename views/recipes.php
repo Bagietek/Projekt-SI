@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Nie działa</title>
+    <title>Przepisy</title>
 </head>
 <body>
+    <!-- CSS taki sam jak forum, nie ma potrzeby zmieniać -->
 <div class = "inspiracje">
-        <center> <h1>Forum</h1> </center>
+        <center> <h1>Przepisy</h1> </center>
         <?php 
         if(isset($_SESSION['permission'])){
-            echo "<center><a href='/?action=addpost'><input class=card-forum type='button' value='Dodaj post'></a></center>";
+            echo "<center><a href='/?action=addrecipe'><input class=card-forum type='button' value='Dodaj przepis'></a></center>";
         } 
         ?>
     <div class="inspiracjeSrodek">
@@ -19,7 +20,7 @@
                     echo "<div class=forumPic>";
                         echo "<h1>$row[title]</h1>";
                         if($row['picture'] != null){
-                            echo "<img src=images/forum/$row[picture] width=200 height=200>";
+                            echo "<img src=images/recipes/$row[picture] width=200 height=200>";
                         }
                     echo "</div>";  
                     echo "<div class=tresc>";
@@ -37,7 +38,7 @@
                         echo "</div>";
                     echo "</div>";
                     
-                    echo "<center><a href='/?action=post&id=$row[fID]'><input type='button' value='Komentarze'></a></center>";
+                    echo "<center><a href='/?action=recipe&id=$row[rID]'><input type='button' value='Komentarze'></a></center>";
             
                 echo "</div>";
             }

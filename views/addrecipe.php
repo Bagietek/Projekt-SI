@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<form action="index.php?action=addpost" method="post" enctype="multipart/form-data">
+<form action="index.php?action=addrecipe" method="post" enctype="multipart/form-data">
 
 <div class="loginContainer">
     <center><h2 class="header">Dodaj post</h2></center>
@@ -11,9 +11,9 @@
         <label>Temat: </label>
         <br>
 		<input type="text" name="topic" id="">
-		<?php if($errors['addPostLenght']==1) echo '<br><p class="error-forum">Temat jest zbyt długi</p>';?>
+		<?php if($errors['addRecipeLenght']==1) echo '<br><p class="error-forum">Temat jest zbyt długi</p>';?>
 		<br>
-        <label>Treść posta</label>
+        <label>Treść przepisu</label>
         <br>
         <textarea  name="content" rows="4" cols="50"></textarea>
 		<br>
@@ -22,9 +22,9 @@
         <br>
 		<input type="file" name="imgUpload" accept="image/png">
         <br>
-        <?php if($errors['addPostPhoto']==1) echo '<br><p class="error-forum">Błąd przesyłu zdjęcia, akceptowalny format PNG max 5MB!</p>';?>
+        <?php if($errors['addRecipePhoto']==1) echo '<br><p class="error-forum">Błąd przesyłu zdjęcia, akceptowalny format PNG max 5MB!</p>';?>
         <br>
-        <?php if($errors['addPostEmpty']==1) echo '<br><p class="error-forum">Musisz wypełnić temat oraz treść!</p>';?>
+        <?php if($errors['addRecipeEmpty']==1) echo '<br><p class="error-forum">Musisz wypełnić temat oraz treść!</p>';?>
 		<input type="submit" name="submit" value="Opublikuj">
 
         
