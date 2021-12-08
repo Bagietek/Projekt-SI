@@ -22,11 +22,13 @@
                         if($row['picture'] != null){
                             echo "<img src=images/recipes/$row[picture] width=200 height=200>";
                         }
-                    echo "</div>";  
-                    echo "<div class=tresc>";
-                        echo "<p>$row[content]</p>";
-                    echo "</div>";
-                    echo "<div class=tresc>";
+                        echo "</div>";  
+                        echo "<div class=tresc>";
+                        $cuttedString = substr($row['content'],0,30);//niewyświetlanie całej treści w podglądzie przepisów
+                        $cuttedString = $cuttedString.'...';
+                        echo "<p>$cuttedString</p>";
+                        echo "</div>";
+                        echo "<div class=tresc>";
                         echo "<div class=profilePic>";
                         if($row['photo'] == null){
                             echo "<img src=images/profile/stock.png width=50 height=50>";
@@ -38,7 +40,7 @@
                         echo "</div>";
                     echo "</div>";
                     
-                    echo "<center><a href='/?action=recipe&id=$row[rID]'><input type='button' value='Komentarze'></a></center>";
+                    echo "<center><a href='/?action=recipe&id=$row[rID]'><input type='button' value='Zobacz więcej...'></a></center>";
             
                 echo "</div>";
             }

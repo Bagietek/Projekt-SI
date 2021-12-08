@@ -23,7 +23,9 @@
                         }
                     echo "</div>";  
                     echo "<div class=tresc>";
-                        echo "<p>$row[content]</p>";
+                        $cuttedString = substr($row['content'],0,30);//niewyświetlanie całej treści w podglądzie przepisów
+                        $cuttedString = $cuttedString.'...';
+                        echo "<p>$cuttedString</p>";
                     echo "</div>";
                     echo "<div class=tresc>";
                         echo "<div class=profilePic>";
@@ -37,7 +39,7 @@
                         echo "</div>";
                     echo "</div>";
                     
-                    echo "<center><a href='/?action=post&id=$row[fID]'><input type='button' value='Komentarze'></a></center>";
+                    echo "<center><a href='/?action=post&id=$row[fID]'><input type='button' value='Zobacz więcej...'></a></center>";
             
                 echo "</div>";
             }

@@ -26,7 +26,7 @@
                     ?>
                 </div>
                     <div class="tresc">
-                        <p><?php echo "$row[content]"; ?></p>
+                        <p><?php echo nl2br(chunk_split($row['content'], 50, "\r\n")); ?></p>
                         
                     </div>
 

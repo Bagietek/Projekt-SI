@@ -27,7 +27,9 @@
                     ?>
                 </div>
                     <div class="tresc">
-                        <p><?php echo "$row[content]"; ?></p>
+                        <p><?php 
+                            echo nl2br(chunk_split($row['content'], 50, "\r\n"));//przedzielenie stringa znakami nowej linii
+                        ?></p>
                         
                     </div>
 
@@ -39,7 +41,7 @@
                         
                         foreach($statementUsers as $rowK){
                             echo "<div class=tresc>";
-                            echo "$rowK[content]";
+                            echo nl2br(chunk_split($rowK['content'], 50, "\r\n"));
                             echo "<br>";
                             if($rowK['photo'] != null){
                                 echo "<img src=images/profile/$rowK[photo] width=50 height=50>";
@@ -69,7 +71,6 @@
         <br>
         
     </div>    
-    
 </div>
         
 </body>
