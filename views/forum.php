@@ -4,11 +4,16 @@
 </head>
 <body>
 <div class = "inspiracje">
-        <center> <h1>Forum</h1> </center>
-        <?php 
-        if(isset($_SESSION['permission'])){
-            echo "<center><a href='/?action=addpost'><input class=card-forum type='button' value='Dodaj post'></a></center>";
-        } 
+        <?php
+            if(isset($_GET['search'])){
+                echo "<center> <h1>Forum wyszukanie: $_GET[search]</h1> </center>";
+            }else{
+                echo "<center> <h1>Forum</h1> </center>";
+            }
+
+            if(isset($_SESSION['permission'])){
+                echo "<center><a href='/?action=addpost'><input class=card-forum type='button' value='Dodaj post'></a></center>";
+            } 
         ?>
     <div class="inspiracjeSrodek">
         

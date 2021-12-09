@@ -27,12 +27,12 @@
             echo "<a href='/?action=users'><input type='button' name = 'users' value='Użytkownicy'></a>";
         ?>
         
-        <!-- funkcjonalność search, css nie styka usunąć form do powrotu poprzedniego wyglądu -->
-
+        <!-- <input type="submit" name="szukajButton" value="Szukaj"> -->
+        
         <form action='index.php?action=search' method='post'>
             <div class="wyszukaj">
                 <input type="search" name="szukaj" placeholder="Wyszukaj">
-                <input type="button" name="szukajButton" value="Szukaj">
+                <input type="submit" name="szukajButton" value="Szukaj">
             </div>
         </form>
        

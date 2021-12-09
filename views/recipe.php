@@ -20,9 +20,10 @@
             <div class="card-post">
                 <div class = "postPic">
                     <?php
+                        echo "<h1>$row[title]</h1>";
                         if(isset($_SESSION['logged']))
                         {
-                            echo "<h1>$row[title]</h1>";
+                            
                             if(isset($statementLikes) && $statementLikes->rowCount() == 0 && isset($_SESSION['logged']))
                             {
                                 echo "<a href='/?action=like&recpieID=$id&wtd=like'><input type='button' name = 'like' value='Lubię ten przepis'></a>";
