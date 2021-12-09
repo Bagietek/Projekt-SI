@@ -82,9 +82,8 @@ body{
 .middle{
     min-height: 400px;
     min-width: 900px;
-    background: url(images/dayRecipe/dayRecipe.png);
     background-size: cover;
-    border: 5px solid black;
+
 }
 
 .middleWhite{

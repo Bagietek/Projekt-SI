@@ -20,7 +20,7 @@
         <br>
         <label>Zdjęcie: </label>    
         <br>
-		<input type="file" name="imgUpload" accept="image/png">
+		<input type="file" name="imgUpload" accept="image/png/jpg/jpeg">
         <br>
         <?php if($errors['addRecipePhoto']==1) echo '<br><p class="error-forum">Błąd przesyłu zdjęcia, akceptowalny format PNG max 5MB!</p>';?>
         <br>

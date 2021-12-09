@@ -21,8 +21,11 @@
     <div class= "container">
             <div class="middle">
             <div class="middleWhite">
-                <h1>Przepis dnia</h1>
+            <h1>Przepis dnia</h1>
             </div>
+            <?php echo "<img src=images/recipes/$recipeOfTheDay[picture]
+                        width=900px height=400px>" ?>
+
             <div class="text">
             <p><?php echo $recipeOfTheDay['title']?></p>
             </div>

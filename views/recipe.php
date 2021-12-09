@@ -20,6 +20,7 @@
             <div class="card-post">
                 <div class = "postPic">
                     <?php
+
                         echo "<h1>$row[title]</h1>";
                         if(isset($statementLikes) && $statementLikes->rowCount() == 0 && isset($_SESSION['logged']))
                         {
@@ -31,7 +32,8 @@
                         }
                         if($row['dayRecipe'] == 0 && isset($_SESSION['logged'])&&($_SESSION['permission'] == 'admin')||($_SESSION['permission'] == 'mod'))
                         {
-                            echo "<a href='/?action=recipeOfTheDay&recipeID=$id'><input type='button' name = 'recipeOfTheDay' value='Ustaw jako przepis dnia'></a>";
+                            $picture = $row['picture'];
+                            echo "<a href='/?action=recipeOfTheDay&recipeID=$id&picture=$picture'><input type='button' name = 'recipeOfTheDay' value='Ustaw jako przepis dnia'></a>";
                         }              
 
 

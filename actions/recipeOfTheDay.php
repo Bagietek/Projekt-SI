@@ -13,7 +13,8 @@
 	}
 
     $id = $_GET['recipeID'];
-    var_dump($id);
+	$picture = $_GET['picture'];
+    //var_dump($id);
     try{
 		$statement = $db->prepare('UPDATE recipe SET dayRecipe=0 WHERE dayRecipe=1');
 		$statement->execute();
@@ -32,6 +33,8 @@
 	}
 
 
-    header("Refresh: 0; URL = /index.php?action=recipe&id=$id");
+
+
+    header("location:/index.php?action=recipe&id=$id");
 
 ?>
