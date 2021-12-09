@@ -20,21 +20,24 @@
             <div class="card-post">
                 <div class = "postPic">
                     <?php
-
-                        echo "<h1>$row[title]</h1>";
-                        if(isset($statementLikes) && $statementLikes->rowCount() == 0 && isset($_SESSION['logged']))
+                        if(isset($_SESSION['logged']))
                         {
-                            echo "<a href='/?action=like&recpieID=$id&wtd=like'><input type='button' name = 'like' value='Lubię ten przepis'></a>";
+                            echo "<h1>$row[title]</h1>";
+                            if(isset($statementLikes) && $statementLikes->rowCount() == 0 && isset($_SESSION['logged']))
+                            {
+                                echo "<a href='/?action=like&recpieID=$id&wtd=like'><input type='button' name = 'like' value='Lubię ten przepis'></a>";
+                            }
+                            elseif(isset($statementLikes) && $statementLikes->rowCount() == 1 && isset($_SESSION['logged']))
+                            {
+                                echo "<a href='/?action=like&recpieID=$id&wtd=dislike'><input type='button' name = 'dislike' value='Nie lubię tego przepisu'></a>";
+                            }
+                            if(($_SESSION['permission'] == 'admin' || $_SESSION['permission'] == 'mod')&&$row['dayRecipe'] == 0 && isset($_SESSION['logged'])&&($_SESSION['permission'] == 'admin')||($_SESSION['permission'] == 'mod'))
+                            {
+                                $picture = $row['picture'];
+                                echo "<a href='/?action=recipeOfTheDay&recipeID=$id&picture=$picture'><input type='button' name = 'recipeOfTheDay' value='Ustaw jako przepis dnia'></a>";
+                            }  
                         }
-                        elseif(isset($statementLikes) && $statementLikes->rowCount() == 1 && isset($_SESSION['logged']))
-                        {
-                            echo "<a href='/?action=like&recpieID=$id&wtd=dislike'><input type='button' name = 'dislike' value='Nie lubię tego przepisu'></a>";
-                        }
-                        if($row['dayRecipe'] == 0 && isset($_SESSION['logged'])&&($_SESSION['permission'] == 'admin')||($_SESSION['permission'] == 'mod'))
-                        {
-                            $picture = $row['picture'];
-                            echo "<a href='/?action=recipeOfTheDay&recipeID=$id&picture=$picture'><input type='button' name = 'recipeOfTheDay' value='Ustaw jako przepis dnia'></a>";
-                        }              
+            
 
 
                         

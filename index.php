@@ -7,7 +7,7 @@ include("views/View.php");
 
 define('_ROOT_PATH', dirname(__FILE__));
 // nazwy podstron
-$actions = array("home","login","logout","recipes","forum","aboutus","users","deleteuser","signup","changeperm","post","addpost","search","deletecomment","deletepost","addcomment","addrecipe","recipe","like","recipeOfTheDay");
+$actions = array("home","login","logout","recipes","forum","aboutus","users","deleteuser","signup","changeperm","post","addpost","search","deletecomment","deletepost","addcomment","addrecipe","recipe","like","recipeOfTheDay","editAccount");
 if(!isset($_SESSION['action']))
     $_SESSION['action'] = 'home';
 if(!empty($_GET['action'] )){

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Nie działa</title>
 </head>
 <body>
 <div class = "inspiracje">

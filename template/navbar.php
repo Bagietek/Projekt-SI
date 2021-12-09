@@ -14,7 +14,10 @@
         <a href="/?action=forum"><input type="button" name = "forum" value="Forum"></a>
         <?php
             if(isset($_SESSION['logged']))
+            {
                 echo "<a href='/?action=logout'><input type='button' name = 'logout' value='Wyloguj'></a>";
+                echo "<a href='/?action=editAccount'><input type='button' name = 'editAccount' value='Edytuj dane konta'></a>";
+            }
             else
                 echo "<a href='/?action=login'><input type='button' name = 'login' value='Zaloguj'></a>";
         ?>
