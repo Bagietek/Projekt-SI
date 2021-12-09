@@ -7,7 +7,7 @@ include("views/View.php");
 
 define('_ROOT_PATH', dirname(__FILE__));
 // nazwy podstron
-$actions = array("home","login","logout","recipes","forum","aboutus","users","deleteuser","signup","changeperm","post","addpost","search","deletecomment","deletepost","addcomment","addrecipe","recipe","like","recipeOfTheDay","editAccount");
+$actions = array("home","login","logout","recipes","forum","aboutus","users","deleteuser","signup","changeperm","post","addpost","search","deletecomment","deletepost","addcomment","addrecipe","recipe","like","recipeOfTheDay","editAccount","modifyPost");
 if(!isset($_SESSION['action']))
     $_SESSION['action'] = 'home';
 if(!empty($_GET['action'] )){
@@ -26,6 +26,11 @@ if(($_SESSION['action']!='signup')&&(isset($_SESSION['signUpEmptyError'])||isset
     $_SESSION['signUpEmptyError'] = 0;
     $_SESSION['signUpExistError'] = 0;
     $_SESSION['signUpNotEqualError'] = 0;
+}
+if(($_SESSION['action']!='editAccount')&&(isset($_SESSION['editAccountEmptyError'])||isset($_SESSION['editAccountNotEqualError'])))
+{
+    $_SESSION['editAccountEmptyError'] = 0;
+    $_SESSION['editAccountNotEqualError'] = 0;
 }
 
 $view = new View();

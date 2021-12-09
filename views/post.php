@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Post</title>
 </head>
 <body>
@@ -19,7 +21,8 @@
             <div class="card-post">
                 <div class = "postPic">
                     <?php
-                        echo "<h1>$row[title]</h1>";
+                        echo "<h1>$creatorNick[nick]: ";
+                        echo "$row[title]</h1>";
                         if($row['picture'] != null){
                             echo "<img src=images/forum/$row[picture] width=200 height=200>";
                         }
@@ -38,6 +41,7 @@
                         
                         foreach($statementUsers as $rowK){
                             echo "<div class=tresc>";
+                            echo $rowK['nick'].": ";
                             echo "$rowK[content]";
                             echo "<br>";
                             if($rowK['photo'] != null){

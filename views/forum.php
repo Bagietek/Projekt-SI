@@ -27,8 +27,12 @@
                         }
                     echo "</div>";  
                     echo "<div class=tresc>";
-                        $cuttedString = substr($row['content'],0,30);//niewyświetlanie całej treści w podglądzie przepisów
-                        $cuttedString = $cuttedString.'...';
+                    $cuttedString = $row['content'];
+                        if(strlen($cuttedString)>30)
+                        {
+                            $cuttedString = substr( $cuttedString,0,30);//niewyświetlanie całej treści w podglądzie przepisów
+                            $cuttedString = $cuttedString.'...';
+                        }
                         echo "<p>$cuttedString</p>";
                     echo "</div>";
                     echo "<div class=tresc>";

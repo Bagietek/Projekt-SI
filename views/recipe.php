@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Przepis</title>
 </head>
 <body>
@@ -63,6 +65,7 @@
                         
                         foreach($statementUsers as $rowK){
                             echo "<div class=tresc>";
+                            echo $rowK['nick'].": ";
                             echo nl2br(chunk_split($rowK['content'], 50, "\r\n"));
                             echo "<br>";
                             if($rowK['photo'] != null){

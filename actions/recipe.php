@@ -20,7 +20,7 @@
     $row = $statement->fetch();
     
 
-    $statementUsers = $db->prepare('SELECT c.id AS id, c.content, u.photo, u.id AS userID FROM comment c INNER JOIN user u ON u.id=c.userID WHERE place="recipe" AND postID=:id');
+    $statementUsers = $db->prepare('SELECT c.id AS id, c.content, u.photo, u.nick, u.id AS userID FROM comment c INNER JOIN user u ON u.id=c.userID WHERE place="recipe" AND postID=:id');
     $statementUsers->bindValue(':id', $id, PDO::PARAM_INT);
 	$statementUsers->execute();
 	if(isset($_SESSION['logged']))
