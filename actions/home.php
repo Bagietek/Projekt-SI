@@ -12,6 +12,6 @@
     $stmt = $db->query("SELECT title, picture, id FROM recipe WHERE dayRecipe = 1");
     $stmt->execute();
     $recipeOfTheDay = $stmt->fetch();
-    $query = $db->query("SELECT title, picture, id, likes FROM recipe ORDER BY likes DESC");
-    $stmt->execute();
+    $query = $db->query("SELECT title, picture, id, likes FROM recipe ORDER BY likes DESC LIMIT 5;");
+    $query->execute();
 ?>

@@ -33,9 +33,8 @@
        <p>Najlepsze przepisy:</p>
                 <ol id ="list">
                     <?php
-                    for($i=0;$i<5;$i++)
+                    foreach($query as $bestRecipe)
                     {
-                        $bestRecipe = $query->fetch();
                         $cuttedString = $bestRecipe['title'];
                         if(strlen($cuttedString)>26)
                         {
