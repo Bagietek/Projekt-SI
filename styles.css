@@ -82,7 +82,7 @@ body{
 .middle{
     min-height: 400px;
     min-width: 900px;
-    background:url("https://pliki.doradcasmaku.pl/soczysty-kurczak-pieczony-w-calosci0-4.webp");
+    background: url(images/dayRecipe/dayRecipe.png);
     background-size: cover;
     border: 5px solid black;
 }

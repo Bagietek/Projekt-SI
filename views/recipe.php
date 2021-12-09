@@ -21,7 +21,23 @@
                 <div class = "postPic">
                     <?php
                         echo "<h1>$row[title]</h1>";
-                        if($row['picture'] != null){
+                        if(isset($statementLikes) && $statementLikes->rowCount() == 0 && isset($_SESSION['logged']))
+                        {
+                            echo "<a href='/?action=like&recpieID=$id&wtd=like'><input type='button' name = 'like' value='Lubię ten przepis'></a>";
+                        }
+                        elseif(isset($statementLikes) && $statementLikes->rowCount() == 1 && isset($_SESSION['logged']))
+                        {
+                            echo "<a href='/?action=like&recpieID=$id&wtd=dislike'><input type='button' name = 'dislike' value='Nie lubię tego przepisu'></a>";
+                        }
+                        if($row['dayRecipe'] == 0 && isset($_SESSION['logged'])&&($_SESSION['permission'] == 'admin')||($_SESSION['permission'] == 'mod'))
+                        {
+                            echo "<a href='/?action=recipeOfTheDay&recipeID=$id'><input type='button' name = 'recipeOfTheDay' value='Ustaw jako przepis dnia'></a>";
+                        }              
+
+
+                        
+                        if($row['picture'] != null)
+                        {
                             echo "<img src=images/recipes/$row[picture] width=200 height=200>";
                         }
                     ?>

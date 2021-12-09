@@ -23,4 +23,12 @@
     $statementUsers = $db->prepare('SELECT c.id AS id, c.content, u.photo, u.id AS userID FROM comment c INNER JOIN user u ON u.id=c.userID WHERE place="recipe" AND postID=:id');
     $statementUsers->bindValue(':id', $id, PDO::PARAM_INT);
 	$statementUsers->execute();
+	if(isset($_SESSION['logged']))
+	{
+		$statementLikes = $db->prepare('SELECT * FROM likes WHERE userID = :logged AND recipeID = :id');
+		$statementLikes->bindValue(':id', $id, PDO::PARAM_INT);
+		$statementLikes->bindValue(':logged', $_SESSION['logged'], PDO::PARAM_INT);
+		$statementLikes->execute();
+	}
+	
 ?>

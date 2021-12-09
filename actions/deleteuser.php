@@ -8,7 +8,6 @@ try
 		echo 'Błąd: '.$e->getMessage();
 	}
     $id =  $_GET['param'];
-	// sprawdenie czy nie jest usuwany ostatni admin?
 	
 	// usunięcie użytkownika
 	try{
