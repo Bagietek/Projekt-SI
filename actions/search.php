@@ -41,13 +41,13 @@
     }
 
     if(isset($order['score'])){
-        $queryR = $db->prepare('SELECT u.photo, u.id, u.nick, u.description, r.title, r.content, r.picture, r.likes, r.id AS rID FROM recipe r INNER JOIN user u ON r.userID=u.id WHERE r.title LIKE :search ORDER BY r.likes DESC');
+        $queryR = $db->prepare('SELECT u.photo, u.id, u.nick, u.description, r.title, r.content, r.picture, r.likes, r.id AS rID FROM recipe r INNER JOIN user u ON r.userID=u.id WHERE r.title LIKE :search OR r.content LIKE :search ORDER BY r.likes DESC');
     }else{
-        $queryR = $db->prepare('SELECT u.photo, u.id, u.nick, u.description, r.title, r.content, r.picture, r.id AS rID FROM recipe r INNER JOIN user u ON r.userID=u.id WHERE r.title LIKE :search');
+        $queryR = $db->prepare('SELECT u.photo, u.id, u.nick, u.description, r.title, r.content, r.picture, r.id AS rID FROM recipe r INNER JOIN user u ON r.userID=u.id WHERE r.title LIKE :search OR r.content LIKE :search');
     }
     $queryR->bindValue(':search', "%$term%", PDO::PARAM_STR);
     $queryR->execute();
-    $queryF = $db->prepare('SELECT u.photo, u.id, u.nick, u.description, f.title, f.content, f.picture, f.id AS fID FROM forum f INNER JOIN user u ON f.userID=u.id WHERE f.title LIKE :search');
+    $queryF = $db->prepare('SELECT u.photo, u.id, u.nick, u.description, f.title, f.content, f.picture, f.id AS fID FROM forum f INNER JOIN user u ON f.userID=u.id WHERE f.title LIKE :search OR f.content LIKE :search');
     $queryF->bindValue(':search', "%$term%", PDO::PARAM_STR);
     $queryF->execute();
 ?>
