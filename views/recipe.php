@@ -23,12 +23,19 @@
                 <div class = "postPic">
                     <?php
                         echo "<h1>$row[title]</h1>";
+
+                        if($row['picture'] != null)
+                        {
+                            echo "<img src=images/recipes/$row[picture] width=200 height=200> <br>";
+                        }
+
                         if(isset($_SESSION['logged']))
                         {
                             
                             if(isset($statementLikes) && $statementLikes->rowCount() == 0 && isset($_SESSION['logged']))
                             {
-                                echo "<a href='/?action=like&recpieID=$id&wtd=like'><input type='button' name = 'like' value='Lubię ten przepis'></a>";
+                              //  echo "<a href='/?action=like&recpieID=$id&wtd=like'> <div class= 'likeContainer' <label class= 'likelabel'>Polub ten post</label> <div class='likeobrazek'></div> </div></a> ";
+                                echo "<a href='/?action=like&recpieID=$id&wtd=like'><input class='likeButton' type='button' name = 'like' value='Lubię ten przepis'> </a>";
                             }
                             elseif(isset($statementLikes) && $statementLikes->rowCount() == 1 && isset($_SESSION['logged']))
                             {
@@ -40,14 +47,7 @@
                                 echo "<a href='/?action=recipeOfTheDay&recipeID=$id&picture=$picture'><input type='button' name = 'recipeOfTheDay' value='Ustaw jako przepis dnia'></a>";
                             }  
                         }
-            
-
-
-                        
-                        if($row['picture'] != null)
-                        {
-                            echo "<img src=images/recipes/$row[picture] width=200 height=200>";
-                        }
+                        echo "<br>";
                     ?>
                 </div>
                     <div class="tresc">
