@@ -201,7 +201,7 @@ body{
     width: 200px;
 }
 
-.card .tresc{
+.card {
     margin-bottom: 20px;
     margin-right: 10px;
     border: 2px solid black;
@@ -423,4 +423,88 @@ table, th, td {
     Font-family: Copperplate, Copperplate Gothic Light, fantasy;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.aboutus-conatiner{
+    
+    margin: auto;
+    margin-top: 30px;
+    background: url(https://i.pinimg.com/564x/58/9b/98/589b9830647620d15d33b32ae9c1f286.jpg);
+    height: 1100px;
+    width: 900px;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: 20px; */
+}
+
+.aboutus-left{
+    background: url(https://www-arch.polsl.pl/logo/PublishingImages/Politechnika_Sl_logo_pl/pl/czarnobiale/politechnika_sl_logo_bw_poziom_inwersja_pl_rgb.jpg);
+    background-size: 100% auto;
+    height: 300px;
+    
+}
+
+.aboutus-obarzek{
+    background: url(https://img-ovh-cloud.zszywka.pl/1/0334/8030.jpg);
+    margin-left: 20px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 400px;
+}
+
+.aboutus-right{
+    margin: auto;
+    margin-top: 30px;
+    height: 100px;
+    width: 200px;
+    font-size: 50px;
+}
+
+.aboutus-srodek{
+    display: flex;
+}
+
+.aboutus-tresc{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 30px;
+     height: 370px; 
+    width: 500px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.likeButton{
+    /* background: url(https://upload.wikimedia.org/wikipedia/commons/5/57/Thumb_up_icon_2.svg);
+    background-repeat: no-repeat; */
+    height: 50px;
+    width: 250px;
+     /* margin: 50px; */
+     left: 20px;
+    /* top: -20px; */
+}
+.likeobrazek{
+    background: url(https://upload.wikimedia.org/wikipedia/commons/5/57/Thumb_up_icon_2.svg);
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+}
+
+.likelabel{
+    font-size: 40px;
+    background: chartreuse;
+}
+
+.likeContainer{
+    display: flex;
+    background: cyan;
+    font-size: 40px;
+    text-decoration: none;
+    border: 3px solid black;
+    margin-right: 180px;
+    
+}
+.tresc{
+    background:url(https://i.pinimg.com/564x/2e/c8/8a/2ec88a6bb3fb0721251f564302fb768f.jpg);
 }
