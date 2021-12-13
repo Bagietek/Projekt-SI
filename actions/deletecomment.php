@@ -46,6 +46,6 @@ if(isset($_SESSION['permission'])){
 }else{
     header("location: index.php?action=home");
 }
-
+exit;
 
 ?>

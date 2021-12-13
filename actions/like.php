@@ -54,9 +54,9 @@
         $db->rollBack();
         echo $e->getMessage();
     }
-	header("Refresh: 0; URL = /index.php?action=recipe&id=$id");
-
-
+	//header("Refresh: 0; URL = /index.php?action=recipe&id=$id");
+    header("location: index.php?action=recipe&id=$id");
+    exit;
 
 
 ?>

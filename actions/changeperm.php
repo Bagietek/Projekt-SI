@@ -23,4 +23,5 @@
 	
     $_SESSION['action'] = 'users';
 	header('location: index.php');
+	exit;
 ?>

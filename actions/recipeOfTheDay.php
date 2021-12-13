@@ -36,5 +36,5 @@
 
 
     header("location:/index.php?action=recipe&id=$id");
-
+	exit;
 ?>
