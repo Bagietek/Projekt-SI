@@ -5,7 +5,7 @@ session_start();
 include("views/View.php");
 
 
-define('_ROOT_PATH', dirname(__FILE__));
+//define('_ROOT_PATH', dirname(__FILE__));
 // nazwy podstron
 $actions = array("home","login","logout","recipes","forum","aboutus","users","deleteuser","signup","changeperm","post","addpost","search","deletecomment","deletepost","addcomment","addrecipe","recipe","like","recipeOfTheDay","editAccount","modifyPost");
 if(!isset($_SESSION['action']))
@@ -14,7 +14,7 @@ if(!empty($_GET['action'] )){
     if(in_array($_GET['action'] , $actions)){
         $_SESSION['action'] = $_GET["action"];
     }else{
-        $_SESSION['action'] = 'pageNotFound';
+        $_SESSION['action'] = 'home';
     }
 }
 if(isset($_SESSION['loginerror'])&&$_SESSION['action']!='login')

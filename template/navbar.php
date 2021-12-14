@@ -29,8 +29,8 @@
         
 
         
-        <form action='index.php?action=search' method='post'>
-            <div class="wyszukaj">
+        <form class="wyszukaj" action='index.php?action=search' method='post'>
+            <div>
                 <input type="search" name="szukaj" placeholder="Wyszukaj">
                 <input type="submit" name="szukajButton" value="Szukaj">
             </div>
