@@ -6,6 +6,41 @@
     <title>Post</title>
 </head>
 <body>
+
+<?php //funkcja do wyświetlania stringów
+        function writeString($string) 
+        {
+            $words = explode('\n', $string);
+
+            $maxLineLength = 50;
+
+            $currentLength = 0;
+            $index = 0;
+            $output[$index] = null;
+            foreach ($words as $word) 
+            {
+                $wordLength = strlen($word) + 1;
+                if (($currentLength + $wordLength) <= $maxLineLength)
+                {
+                    $output[$index] .= $word . ' ';
+                    $currentLength += $wordLength;
+                } 
+                else 
+                {
+                    $index += 1;
+                    $currentLength = $wordLength;
+                    $output[$index] = $word;
+                }
+            }
+            foreach ($output as $line)
+            {
+                echo $line;
+            }
+
+        }
+
+    ?>
+
 <div class = "inspiracje-post">
         <center>  
         <?php
@@ -29,7 +64,7 @@
                     ?>
                 </div>
                     <div class="tresc">
-                        <p><?php echo nl2br(chunk_split($row['content'], 50, "\r\n")); ?></p>
+                        <p><?php writeString($row['content']); ?></p>
                         
                     </div>
 
@@ -42,7 +77,7 @@
                         foreach($statementUsers as $rowK){
                             echo "<div class=tresc>";
                             echo $rowK['nick'].": ";
-                            echo "$rowK[content]";
+                            writeString($rowK['content']);
                             echo "<br>";
                             if($rowK['photo'] != null){
                                 echo "<img src=images/profile/$rowK[photo] width=50 height=50>";

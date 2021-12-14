@@ -6,6 +6,39 @@
     <title>Przepis</title>
 </head>
 <body>
+    <?php //funkcja do wyświetlania stringów
+        function writeString($string) 
+        {
+            $words = explode('\n', $string);
+
+            $maxLineLength = 50;
+
+            $currentLength = 0;
+            $index = 0;
+            $output[$index] = null;
+            foreach ($words as $word) 
+            {
+                $wordLength = strlen($word) + 1;
+                if (($currentLength + $wordLength) <= $maxLineLength)
+                {
+                    $output[$index] .= $word . ' ';
+                    $currentLength += $wordLength;
+                } 
+                else 
+                {
+                    $index += 1;
+                    $currentLength = $wordLength;
+                    $output[$index] = $word;
+                }
+            }
+            foreach ($output as $line)
+            {
+                echo $line;
+            }
+
+        }
+
+    ?>
     <!-- CSS taki sam jak post -->
 <div class = "inspiracje-post">
         <center>  
@@ -52,21 +85,24 @@
                 </div>
                     <div class="tresc">
                         <p><?php 
-                            echo nl2br(chunk_split($row['content'], 50, "\r\n"));//przedzielenie stringa znakami nowej linii
+                            /*echo nl2br(chunk_split($row['content'], 50, "\r\n"));//przedzielenie stringa znakami nowej linii*/
+                            writeString($row['content']);
                         ?></p>
                         
                     </div>
 
                     <?php
                         // komentarze
-                        if($statementUsers->rowCount() > 0){
+                        if($statementUsers->rowCount() > 0)
+                        {
                             echo "<h1>Komentarze</h1>";
                         }
                         
-                        foreach($statementUsers as $rowK){
+                        foreach($statementUsers as $rowK)
+                        {
                             echo "<div class=tresc>";
                             echo $rowK['nick'].": ";
-                            echo nl2br(chunk_split($rowK['content'], 50, "\r\n"));
+                            writeString($rowK['content']);
                             echo "<br>";
                             if($rowK['photo'] != null){
                                 echo "<img src=images/profile/$rowK[photo] width=50 height=50>";
