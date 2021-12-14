@@ -41,7 +41,7 @@
 
     ?>
 
-<div class = "inspiracje-post">
+<!-- <div class = "inspiracje-post"> -->
         <center>  
         <?php
             if(isset($_SESSION['permission'])){
@@ -108,7 +108,7 @@
         
     </div>    
     
-</div>
+<!-- </div> -->
         
 </body>
 </html>

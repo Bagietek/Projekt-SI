@@ -40,8 +40,9 @@
 
     ?>
     <!-- CSS taki sam jak post -->
-<div class = "inspiracje-post">
-        <center>  
+    
+<!-- <div class = "inspiracje-post"> -->
+    <center>
         <?php
             if(isset($_SESSION['permission'])){
                 if($_SESSION['permission'] == 'admin' || $_SESSION['permission'] == 'mod' || $row['userID'] == $_SESSION['logged']){
@@ -49,9 +50,10 @@
                 }
             }
         ?>
-        </center>
+    </center> 
+    <br>
     <div class="inspiracjeSrodek-post">
-        <center>
+    <center>
             <div class="card-post">
                 <div class = "postPic">
                     <?php
@@ -85,7 +87,7 @@
                 </div>
                     <div class="tresc">
                         <p><?php 
-                            /*echo nl2br(chunk_split($row['content'], 50, "\r\n"));//przedzielenie stringa znakami nowej linii*/
+                            //cho nl2br(chunk_split($row['content'], 50, "\r\n"));//przedzielenie stringa znakami nowej linii
                             writeString($row['content']);
                         ?></p>
                         
@@ -127,13 +129,14 @@
                     }
                     ?>
             </div>
-        </center>
-        
+    </center> 
+            
         <br>
         
-    </div>    
-</div>
-        
+    </div>   
+    
+ <!-- </div> -->
+ 
 </body>
 </html>
 

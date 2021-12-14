@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 
 <body>
+    <br>
     <div class="users_table">
+    <center>
     <table>
         <thead >
             <tr><th>ID</th><th>Login</th><th>Nick</th><th>Email</th><th>Uprawnienia</th><th>Akcja</th></tr>
         </thead>
         <tbody>
+            
         <?php
             foreach($users as $user)
             {
@@ -41,6 +44,7 @@
         ?>
         </tbody>
     </table>
+    </center>
     </div>
 </body>
 </html>

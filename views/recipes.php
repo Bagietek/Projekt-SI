@@ -16,6 +16,7 @@
             echo "<center><a href='/?action=addrecipe'><input class=card-forum type='button' value='Dodaj przepis'></a></center>";
         } 
         ?>
+    <br>
     <div class="inspiracjeSrodek">
         
         <?php

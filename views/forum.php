@@ -15,8 +15,8 @@
                 echo "<center><a href='/?action=addpost'><input class=card-forum type='button' value='Dodaj post'></a></center>";
             } 
         ?>
+        <br>
     <div class="inspiracjeSrodek">
-        
         <?php
             foreach($query as $row){
                 echo "<div class=card-forum>";
